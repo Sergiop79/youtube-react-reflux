@@ -1,4 +1,4 @@
-#Youtube-react-flux
+#Youtube-react-reflux
 
 Search videos on youtube with this webapp
 
