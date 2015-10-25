@@ -20,5 +20,5 @@ body {
   font-weight: $font-weight--thin;
   font-size: 1rem;
   line-height: 1.4;
-  background: lightblue;
+  background: lighten(lightblue, 10%);
 }

@@ -12,6 +12,10 @@ import config from '../config';
 
 let _apiKey = config.apiKey;
 
+let _query = 'ramp druid';
+
+let _maxResults = '9';
+
 let VideoStore = Reflux.createStore({
   listenables: [VideoActions],
   videoList: [],
@@ -25,9 +29,9 @@ let VideoStore = Reflux.createStore({
   fetchList: function() {
     let queryObj = {
       part: 'snippet',
-      maxResults: '6',
+      maxResults: _maxResults,
       type: 'video',
-      q: 'cuadros de maniobra',
+      q: _query,
       key: _apiKey,
     }
     // Make the API call
@@ -71,9 +75,9 @@ let VideoStore = Reflux.createStore({
   loadMore: function() {
     let queryObj = {
       part: 'snippet',
-      maxResults: '6',
+      maxResults: _maxResults,
       type: 'video',
-      q: 'cuadros de maniobra',
+      q: _query,
       key: _apiKey,
       pageToken: this.nextPageToken
     }

@@ -23,7 +23,7 @@
 
 
  gulp.task('sass', function () {
-  gulp.src('./scss/**/*.scss')
+  return gulp.src('./scss/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -41,7 +41,7 @@
  });
 
 gulp.task('watch', function () {
-    gulp.watch('**/*.js', ['build']);
+    gulp.watch(['**/*.js', '!dist/**/*.js'], ['build']);
     gulp.watch('./scss/**/*.scss', ['sass']);
 });
 

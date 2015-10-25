@@ -11,14 +11,14 @@ let VideoCard = React.createClass({
   render: function() {
 
     let img = this.props.img;
-    let link = `https://www.youtube.com/watch?v=pV2Iedm1hbc${this.props.id}`;
+    let link = `https://www.youtube.com/watch?v=${this.props.id}`;
     let title = this.props.title;
 
     return (
       <article className="video-card">
         <a href={link}>
           <img src={img}/>
-          <h3>{title}</h3>
+          <h3 className="video-card__title">{title}</h3>
         </a>
       </article>
     );

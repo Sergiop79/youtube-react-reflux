@@ -24,7 +24,7 @@
                 return <VideoCard img={video.thumbnailUrl} id={video.id} title={video.title} key={uid()}/>
               })
             }
-            <button onClick={this.handleClick}>Load More</button>
+            <button onClick={this.handleClick} className="load-btn">Load More</button>
           </section>
       );
     } else {
