@@ -9,6 +9,7 @@
  import VideoActions from '../actions/VideoActions';
  import VideoSearch from './VideoSearch';
  import VideoCard from './VideoCard';
+ import LightBox from './LightBox';
  import Button from './Button';
  import uid from 'uid';
 
@@ -29,6 +30,7 @@
               }
             </section>
             <button onClick={this.handleClick} className="load-btn">Load More</button>
+            <LightBox id="zL46dpNEPPA" show="true" />
           </section>
       );
     } else {
