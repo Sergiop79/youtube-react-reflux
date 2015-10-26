@@ -12,26 +12,31 @@ import config from '../config';
 
 let _apiKey = config.apiKey;
 
-let _query = 'ramp druid';
-
-let _maxResults = '9';
+let _maxResults = '12';
 
 let VideoStore = Reflux.createStore({
   listenables: [VideoActions],
   videoList: [],
   nextPageToken: '',
   baseUrl: 'https://www.googleapis.com/youtube/v3/search',
+  query: '',
 
   init: function () {
     this.fetchList();
   },
   
-  fetchList: function() {
+  fetchList: function(query) {
+    this.query = query || '';
+
+    this.videoList = [];
+
+    console.log(`searching: ${query}`);
+
     let queryObj = {
       part: 'snippet',
       maxResults: _maxResults,
       type: 'video',
-      q: _query,
+      q: this.query,
       key: _apiKey,
     }
     // Make the API call
@@ -77,7 +82,7 @@ let VideoStore = Reflux.createStore({
       part: 'snippet',
       maxResults: _maxResults,
       type: 'video',
-      q: _query,
+      q: this.query,
       key: _apiKey,
       pageToken: this.nextPageToken
     }

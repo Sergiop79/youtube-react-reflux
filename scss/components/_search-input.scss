@@ -1,0 +1,14 @@
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: $base__padding;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  &::placeholder {
+    color: $primary__color;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+}

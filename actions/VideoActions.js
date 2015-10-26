@@ -6,7 +6,7 @@
 import Reflux from 'reflux';
 
 let VideoActions = Reflux.createActions([
-  'fetchlist',
+  'fetchList',
   'loadMore'
 ]);
 

@@ -1,7 +1,6 @@
 .video-list {
-  margin: 0 auto;
+  margin: $base__padding * 7 auto $base__padding;
   max-width: 960px;
-  padding: $base__padding;
   @include min(660px) {
     display: flex;
     flex-wrap: wrap;
