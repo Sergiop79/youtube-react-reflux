@@ -7,7 +7,7 @@
  import Reflux from 'reflux';
  import VideoStore from '../stores/VideoStore';
  import VideoActions from '../actions/VideoActions';
- // import VideoSearch from './VideoSearch';
+ import VideoSearch from './VideoSearch';
  import VideoCard from './VideoCard';
  import Button from './Button';
  import uid from 'uid';
@@ -20,9 +20,7 @@
     if(this.state.videostore) {
       return (
           <section>
-            <form action="#" className="search-form" onSubmit={this.handleQuerySubmit}>
-              <input type="text" placeholder="Search some videos ..." className="search-input" ref="query" />
-            </form>
+          <VideoSearch />
             <section className="video-list">
               {
                 this.state.videostore.map((video) => {
@@ -38,20 +36,7 @@
     }
   },
 
-  handleQuerySubmit: function (e) {
-    e.preventDefault();
-    let query = this.refs.query.value.trim();
-
-    if (!query) {
-      return;
-    }
-
-    console.log(`submited: ${query}`);
-
-    VideoActions.fetchList(query);
-    this.refs.query.value = '';
-    return;
-  },
+  
 
   handleClick: function () {
     console.log('Load More');
